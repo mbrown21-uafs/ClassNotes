@@ -4,7 +4,6 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Toolkit;
-
 import javax.swing.JPanel;
 
 public class GamePanel extends JPanel implements Runnable{
@@ -15,8 +14,12 @@ public class GamePanel extends JPanel implements Runnable{
 	public GamePanel(Dimension dim){
 		this.setSize(dim);
 		this.setBackground(Color.black);
+		
+						//Order of Numbers
+						//ID X Y Speed Direction Color Size
 		ball = new Ball("ball1", 100,100,5,1,Color.red,50);
 		block = new Block("block1", 400,100,3,1,Color.blue,100);
+		this.setIgnoreRepaint(true);
 		
 	}
 	
@@ -39,6 +42,7 @@ public class GamePanel extends JPanel implements Runnable{
 		this.render(g);
 		Toolkit.getDefaultToolkit().sync();
 	}
+	
 
 	@Override
 	public void run() {

@@ -22,7 +22,7 @@ public class Ball extends GameObject{
 	public void update() {
 		
 		this.x = this.x + this.speed;
-		if(x >= 600) {
+		if(x >= 800) {
 			this.x = -100;
 		}
 		
